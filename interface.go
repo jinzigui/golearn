@@ -29,9 +29,11 @@ func (camera *Camera) LeftElectricity() int {
 func main() {
 	phone := &Phone{68, "IPhone"}
 	camera := &Camera{49, "Canon"}
+	fmt.Println(PhoneApp.LeftElectricity())
 	fmt.Println(phone.LeftElectricity())
 	fmt.Println(camera.LeftElectricity())
 	app := ManageElectricityApp(phone)
+	var PhoneApp ManageElectricityApp = &Phone{98, "Android"}
 	fmt.Println(app.LeftElectricity())
 	manageElApp := []ManageElectricityApp{phone, camera}
 	for n, _ := range manageElApp {
