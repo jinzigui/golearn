@@ -51,6 +51,25 @@ func (vector intVector) Reduction() (result int) {
 	return
 }
 
+type Base struct{}
+
+func (Base) Magic() {
+	fmt.Println("base magic")
+}
+
+func (self Base) MoreMagic() {
+	self.Magic()
+	self.Magic()
+}
+
+type Voodoo struct {
+	Base
+}
+
+func (Voodoo) Magic() {
+	fmt.Println("voodoo magic")
+}
+
 func main() {
 	structPeople1 := new(structPeople)
 	structPeople1.InitStructPeople(20, "test")
@@ -66,4 +85,8 @@ func main() {
 	structStudent2 := new(structStudent)
 	structStudent2.InitStructStudent(23, "酱酱", 1200350116, 99.5)
 	structStudent2.PrintfStructStudent()
+
+	v := new(Voodoo)
+	v.Magic()
+	v.MoreMagic()
 }
