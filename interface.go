@@ -64,6 +64,5 @@ func main() {
 			fmt.Println("not macth")
 		}
 	}
-
 	emptyInterFace()
 }
